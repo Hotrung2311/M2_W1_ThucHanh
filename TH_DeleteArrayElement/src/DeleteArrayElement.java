@@ -17,6 +17,7 @@ public class DeleteArrayElement {
         for (int i = x; i <result.length; i++){
             result[i] = a[i+1];
         }
+        System.out.println("Ma trận vùa nhập là: ");
         System.out.println(Arrays.toString(result));
     }
 }
