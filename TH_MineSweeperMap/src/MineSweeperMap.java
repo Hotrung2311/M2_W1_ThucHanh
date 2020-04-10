@@ -38,7 +38,6 @@ public class MineSweeperMap {
                         //Kiểm tra số mìn xung quanh cell
                         boolean isMineOwnerNeighbour = map[yOrdinateOfNeighbour][xOrdinateOfNeighbour].equals("*");
                         if (isMineOwnerNeighbour) minesAround++;
-
                     }
 
                     mapReport[yOrdinate][xOrdinate] = String.valueOf(minesAround);
