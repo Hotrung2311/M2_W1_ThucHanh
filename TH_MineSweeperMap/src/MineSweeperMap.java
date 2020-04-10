@@ -15,6 +15,7 @@ public class MineSweeperMap {
                 if (curentCell.equals("*")) {
                     mapReport[yOrdinate][xOrdinate] = "*";
                 } else {
+                    // tọa độ 8 ô cell xung quang ô đang xét
                     final int[][] NEIGHBOURS_ORDINATE = {
                             {yOrdinate - 1, xOrdinate - 1}, {yOrdinate - 1, xOrdinate}, {yOrdinate - 1, xOrdinate + 1},
                             {yOrdinate, xOrdinate - 1}, {yOrdinate, xOrdinate + 1},
@@ -27,12 +28,14 @@ public class MineSweeperMap {
                         int xOrdinateOfNeighbour = neighbourOrdinate[1];
                         int yOrdinateOfNeighbour = neighbourOrdinate[0];
 
+                        // kiểm tra vị trí của ô cell có nằm trong mảng không
                         boolean isOutOfMapNeighbour = xOrdinateOfNeighbour < 0
                                 || xOrdinateOfNeighbour == MAP_WIDTH
                                 || yOrdinateOfNeighbour < 0
                                 || yOrdinateOfNeighbour == MAP_HEIGHT;
                         if (isOutOfMapNeighbour) continue;
 
+                        //Kiểm tra số mìn xung quanh cell
                         boolean isMineOwnerNeighbour = map[yOrdinateOfNeighbour][xOrdinateOfNeighbour].equals("*");
                         if (isMineOwnerNeighbour) minesAround++;
 
